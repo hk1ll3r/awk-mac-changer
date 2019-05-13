@@ -1,0 +1,26 @@
+VERSION BUILD=10021450
+URL GOTO=detectportal.firefox.com/success.txt
+SET !TIMEOUT_STEP 10
+SET !TIMEOUT_PAGE 30
+TAG POS=1 TYPE=A ATTR=ID:amdocs_signup
+WAIT SECONDS=5
+TAG POS=1 TYPE=SPAN ATTR=TXT:Complimentary<SP>Hour<SP>Pass
+TAG POS=1 TYPE=BUTTON ATTR=ID:continueButton
+TAG POS=1 TYPE=BUTTON ATTR=ID:upgradeOfferCancelButton
+TAG POS=1 TYPE=INPUT:TEXT FORM=ACTION:https://wifiondemand.xfinity.com/wod/#registerCustomer ATTR=ID:registerFirstName CONTENT=aa
+TAG POS=1 TYPE=INPUT:TEXT FORM=ACTION:https://wifiondemand.xfinity.com/wod/#registerCustomer ATTR=ID:registerLastName CONTENT=bb
+SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*900000 + 1); randomNumber;")
+TAG POS=1 TYPE=INPUT:EMAIL FORM=ACTION:https://wifiondemand.xfinity.com/wod/#registerCustomer ATTR=ID:registerEmail CONTENT=aa{{!var1}}@bb.cc
+TAG POS=1 TYPE=INPUT:TEL FORM=ACTION:https://wifiondemand.xfinity.com/wod/#registerCustomer ATTR=ID:registerZipCode CONTENT=94110
+TAG POS=1 TYPE=DIV ATTR=TXT:<em<SP>class="customMessage"<SP>data-bind='validationMessage*
+TAG POS=1 TYPE=BUTTON ATTR=ID:registerContinueButton
+WAIT SECONDS=5
+TAG POS=1 TYPE=INPUT:PASSWORD FORM=ID:mainForm ATTR=ID:password CONTENT=asDF12#$
+TAG POS=1 TYPE=INPUT:PASSWORD FORM=ID:mainForm ATTR=ID:passwordRetype CONTENT=asDF12#$
+TAG POS=1 TYPE=BUTTON ATTR=ID:usePersonalEmail
+TAG POS=1 TYPE=DIV ATTR=ID:dk0-combobox
+TAG POS=1 TYPE=LI ATTR=ID:dk0-What-was<SP>your<SP>first<SP>car<SP>(make<SP>and<SP>model)?
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:mainForm ATTR=ID:secretAnswer CONTENT=aaa
+TAG POS=1 TYPE=BUTTON FORM=ID:mainForm ATTR=ID:submitButton
+TAG POS=1 TYPE=BUTTON ATTR=ID:_orderConfirmationActivatePass
+SAVEAS TYPE=PNG FOLDER=* FILE=*

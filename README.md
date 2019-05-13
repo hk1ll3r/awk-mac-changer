@@ -16,3 +16,5 @@ There is a small bash script to achieve the same for convenience:
 ```
 $ ./change-wifi-mac.sh "/etc/NetworkManager/system-connections/Google-Starbucks"
 ```
+
+For Xfinity on demand wifi, you'll need to sign up to use the wifi. The imacro code (tested on firefox) fills the sign up forms with a random user.
